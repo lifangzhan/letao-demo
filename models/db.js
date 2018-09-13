@@ -5,10 +5,9 @@ const mysql = require('mysql');
 const pool  = mysql.createPool({
     host : '127.0.0.1',
     user : 'root',
-    password : '',
+    password : 'root',
     database : 'letao'
 });
-
 /**
  * [query description]
  * @return {[type]} [description]

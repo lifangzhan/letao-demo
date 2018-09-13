@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./css/base.css"/>
     <link rel="stylesheet" href="./css/category.css"/>
     <script src="./assets/mui/js/mui.min.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/category.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
@@ -39,14 +42,7 @@
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
                 <div class="links">
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
-                    <a href="javascript:;">男士户外</a>
+
                 </div>
             </div>
         </div>
@@ -54,25 +50,36 @@
     <div class="right">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
-                <ul>
-                    <li><a href="javascript:;">29</a></li>
-                    <li><a href="javascript:;">30</a></li>
-                    <li><a href="javascript:;">11</a></li>
-                    <li><a href="javascript:;">11</a></li>
-                    <li><a href="javascript:;">11</a></li>
-                    <li><a href="javascript:;">11</a></li>
-                    <li><a href="javascript:;">11</a></li>
-                    <li><a href="javascript:;">11</a></li>
+                <ul class="rightUl">
+
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-</body>
-<script>
-    mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005
-    });
+
+<script type="text/html" id="category-first">
+    <% for(var i = 0; i< result.length; i++) { %>
+    <a href="javascript:;" data-id="<%=result[i].id %>">
+      <%=result[i].categoryName %>
+    </a>
+    <% } %>
 </script>
+
+<script type="text/html" id="category-second">
+    <% for(var i = 0; i < rows.length; i++) { %>
+    <li>
+        <a href="javascript:;">
+            <img src="<%=rows[i].brandLogo %>" alt=""/>
+            <p><%=rows[i].brandName %></p>
+        </a>
+    </li>
+    <% } %>
+
+    <% if(!rows.length){ %>
+        <div>暂无数据</div>
+    <%  } %>
+</script>
+</body>
 </html>
