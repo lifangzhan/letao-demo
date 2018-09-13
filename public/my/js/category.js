@@ -9,7 +9,6 @@ $(function () {
         success: function (response) {
             var html = template('category-first',{result: response.rows});
            $('.links').html(html);
-            console.log(response.rows);
             if(response.rows.length){
                 var id = response.rows[0].id;
                 $('.links').find('a').eq(0).addClass('active');
