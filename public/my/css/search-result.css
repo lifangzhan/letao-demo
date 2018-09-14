@@ -1,3 +1,6 @@
+body {
+  background-color: #fff;
+}
 header > a {
   color: #fff;
 }
@@ -6,7 +9,6 @@ header > a {
   top: 44px;
   bottom: 44px;
   left: 0;
-  background-color: #fff;
 }
 .title {
   width: 94%;
@@ -28,6 +30,7 @@ header > a {
 }
 .result {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .result > li {
   width: 50%;
