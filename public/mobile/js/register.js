@@ -10,7 +10,7 @@ $(function(){
 			mobile:$.trim($('[name="mobile"]').val()),
 			password:$.trim($('[name="password"]').val()),
 			vCode:$.trim($('[name="checkCode"]').val())
-		}
+		};
 
 		var againPass = $.trim($('[name="againPass"]').val())
 
@@ -66,7 +66,6 @@ $(function(){
 			url:'/user/register',
 			data:data,
 			beforeSend:function(){
-
 				This.html('正在提交数据...');
 
 			},
