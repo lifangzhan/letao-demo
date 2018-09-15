@@ -10,11 +10,28 @@
     <link rel="stylesheet" href="./css/base.css"/>
     <script src="./assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/address.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .mui-content {
+            background-color: #fff!important;
+            font-size: 14px!important;
+        }
+        .mui-content > a {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
-    <h1 class="mui-title">乐淘云购</h1>
+    <a href="javascript:;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">收货地址管理</h1>
     <a class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
 <nav class="mui-bar mui-bar-tab footer my-footer">
@@ -36,10 +53,24 @@
     </a>
 </nav>
 <div class="mui-content">
+    <a href="addAddress.html"> 添加收货地址 </a>
+    <ul class="mui-table-view" id="userAddressMessage">
 
+    </ul>
 
 
 </div>
-
+<script type="text/template" id="addressTmp">
+    <% for(var i = 0; i < res.length; i++) { %>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <div class="mui-media-body">
+                邮 编: <%=res[i].postCode %> 收货人: <%=res[i].recipients %>
+                <p class='mui-ellipsis'><%=res[i].address %><%==res[i].addressDetail %></p>
+            </div>
+        </a>
+    </li>
+    <% } %>
+</script>
 </body>
 </html>
