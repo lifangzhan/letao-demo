@@ -1,0 +1,60 @@
+.my-container {
+  width: 100%;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  bottom: 44px;
+  background-color: #e0e0e0;
+}
+.my-container .left {
+  width: 80px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.my-container .left .links > a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  text-align: center;
+  background-color: #fff;
+  font-size: 14px;
+}
+.my-container .left .links > a.active {
+  background-color: #e0e0e0;
+  border-right: 1px solid transparent;
+}
+.my-container .right {
+  margin-left: 90px;
+  height: 100%;
+  position: relative;
+}
+.my-container .right ul {
+  margin-top: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.my-container .right ul > li {
+  padding: 5px;
+  float: left;
+  width: 33.333%;
+}
+.my-container .right ul > li > a {
+  display: block;
+}
+.my-container .right ul > li > a > img {
+  width: 100%;
+  display: block;
+}
+.my-container .right ul > li > a > p {
+  text-align: center;
+  font-size: 14px;
+}
+.my-container .right ul div {
+  color: red;
+  font-size: 14px;
+  line-height: 30px;
+}

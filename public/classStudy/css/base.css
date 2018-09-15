@@ -1,0 +1,23 @@
+.my-header.mui-bar {
+  background-color: #006699;
+}
+.my-header.mui-bar h1 {
+  color: #fff;
+}
+.my-header.mui-bar .mui-icon {
+  color: #fff;
+}
+.my-footer .mui-tab-item {
+  color: #fff;
+  background-color: #006699;
+}
+.my-footer .mui-tab-item.mui-active {
+  color: darkorange;
+}
+ul {
+  list-style: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
