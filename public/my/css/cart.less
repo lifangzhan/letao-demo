@@ -1,0 +1,127 @@
+body,
+.mui-content {
+  background-color: #fff!important;
+  font-size: 14px;
+  color: #8f8f94;
+
+    .mui-table-view-cell>a:not(.mui-btn){
+      white-space: normal;
+    }
+  .mui-content>.mui-table-view:first-child{
+    margin-top: 0;
+  }
+
+> .mui-table-view {
+  > li {
+    .nowPrice {
+      padding: 0 5px;
+      color: #ff3300;
+    }
+    .oldPrice {
+      text-decoration: line-through;
+    }
+    .left,
+    .right {
+      width: 50%;
+      float: left;
+    }
+    .num {
+      padding-left: 33%;
+    }
+  }
+}
+
+  >.total {
+    padding: 20px;
+    color: #000;
+  }
+
+}
+.editProduct {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  background-color: #fff;
+  z-index: 999;
+  color: #000;
+  > h3 {
+    text-align: center;
+    font-size: 16px;
+  }
+  > span {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 3px;
+    &.activeSize {
+      background-color: #fa672d;
+    }
+  }
+}
+
+.mui-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: rgba(0,0,0,.3);
+}
+.detail-size{
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  > span {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 3px;
+    &.activeSize {
+      background-color: #fa672d;
+    }
+  }
+}
+.detail-num {
+  padding: 10px;
+  overflow: hidden;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+  > div{
+    float: left;
+    margin-right: 3px;
+  }
+  > span {
+    float: left;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ccc;
+  }
+  > input {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ccc;
+    outline: none;
+    float: left;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    color: #000;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  > div:last-of-type {
+    padding-left: 3px;
+  }
+}

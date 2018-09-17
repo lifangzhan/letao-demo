@@ -37,17 +37,17 @@ header > a {
   padding: 5px;
   float: left;
 }
-.result > li > a {
+.result > li > span {
   padding: 3px 3px 10px 3px;
   display: block;
   box-shadow: 0 0 5px #ccc;
   text-align: center;
 }
-.result > li > a > img {
+.result > li > span > img {
   width: 100%;
   display: block;
 }
-.result > li > a > .text {
+.result > li > span > .text {
   color: #8f8f94;
   text-align: center;
   font-size: 14px;
@@ -57,18 +57,18 @@ header > a {
   overflow: hidden;
   margin-bottom: 10px;
 }
-.result > li > a > p {
+.result > li > span > p {
   text-align: center;
 }
-.result > li > a > p > span:first-of-type {
+.result > li > span > p > span:first-of-type {
   color: #f20;
   padding-right: 3px;
 }
-.result > li > a > p > span:last-of-type {
+.result > li > span > p > span:last-of-type {
   text-decoration: line-through;
   padding-left: 3px;
 }
-.result > li > a > .buy_now {
+.result > li > span > .buy_now {
   background: #006699;
   padding: 6px 12px;
   margin: 0 auto;

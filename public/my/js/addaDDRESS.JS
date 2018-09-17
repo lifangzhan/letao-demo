@@ -36,5 +36,17 @@ $(function(){
             }
 
         });
-    })
+    });
+
+
+/*    {"id":15,"userId":6,"address":"北京市北京市东城区","addressDetail":"传智","isDelete":1,"recipients":"猪八戒","postCode":"10010","mobile":null}*/
+    if(localStorage.getItem('editAddress')) {
+
+        //此时是一个字符串,无法操作数据,需要转换成对象
+        //console.log(localStorage.getItem('editAddress'));
+        var obj = JSON.parse(localStorage.getItem('editAddress'));
+        var html = template('editTpl',obj);
+        console.log(html);
+        $('.mui-content').html(html);
+    }
 })

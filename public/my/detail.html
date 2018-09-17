@@ -8,31 +8,18 @@
     <link rel="stylesheet" href="./assets/mui/css/mui.min.css"/>
     <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="./css/base.css"/>
+    <link rel="stylesheet" href="./css/detail.css"/>
     <script src="./assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
-    <script src="./assets/artTemplate/template-native.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/address.js"></script>
-    <style>
-        body {
-            background-color: #fff;
-        }
-        .mui-content {
-            background-color: #fff!important;
-            font-size: 14px!important;
-        }
-        .mui-content > a {
-            display: block;
-            text-align: center;
-            padding: 10px 0;
-        }
-    </style>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/detail.js"></script>
+
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
     <a href="javascript:;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-    <h1 class="mui-title">收货地址管理</h1>
-    <a class="mui-icon mui-icon-search mui-pull-right"></a>
+    <h1 class="mui-title">商品详情</h1>
 </header>
 <nav class="mui-bar mui-bar-tab footer my-footer">
     <a class="mui-tab-item" href="index.html">
@@ -47,32 +34,52 @@
         <span class="mui-icon fa fa-shopping-cart"></span>
         <span class="mui-tab-label">购物车</span>
     </a>
-    <a class="mui-tab-item  mui-active" href="user.html">
+    <a class="mui-tab-item" href="user.html">
         <span class="mui-icon mui-icon-person"></span>
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
 <div class="mui-content">
-    <a href="addAddress.html"> 添加收货地址 </a>
-    <ul class="mui-table-view" id="userAddressMessage">
-
-    </ul>
-
 
 </div>
-<script type="text/template" id="addressTmp">
-    <% for(var i = 0; i < res.length; i++) { %>
-    <li class="mui-table-view-cell mui-transitioning">
-        <div class="mui-slider-right mui-disabled">
-            <a class="mui-btn mui-btn-blue editAddress" href="javascript:;" data-id="<%=res[i].id %>">编辑</a>
-            <a class="mui-btn mui-btn-red delAddress" href="javascript:;" data-id="<%=res[i].id %>">删除</a>
+<script type="text/template" id="detailTpl">
+    <% var small = size.split('-')[0];
+        var large = size.split('-')[1]%>
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            <% for(var i = 0; i < pic.length;i++) {  %>
+            <div class="mui-slider-item">
+                <a href="#"><img src="<%=pic[i].picAddr %>"/></a>
+            </div>
+            <% } %>
         </div>
-        <div class="mui-media-body mui-slider-handle">
-            邮 编: <%=res[i].postCode %> 收货人: <%=res[i].recipients %>
-            <p class='mui-ellipsis'><%=res[i].address %><%==res[i].addressDetail %></p>
-        </div>
-    </li>
-    <% } %>
+
+    </div>
+    <div class="product-title">
+        <%=proName %>
+    </div>
+    <div class="price">
+            价格:
+            <span class="new">¥<%=price %></span>
+            <span class="old">¥<%=oldPrice %></span>
+    </div>
+    <div class="size">
+            尺码:
+            <% for(var i = small; i <= large ; i++) { %>
+            <span class="bgc"><%=i %></span>
+        <% } %>
+    </div>
+    <div class="num">
+            <div>数量:</div>
+            <span class="reduce">-</span>
+            <input type="text" id="num" value='1'/>
+            <span class="increase">+</span>
+            <div>剩余: <%=num %>件</div>
+    </div>
+    <div class="cart">
+            <a href="javascript:;">查看购物车</a>
+            <a href="javascript:;" class="addCart">加入购物车</a>
+    </div>
 </script>
 </body>
 </html>
