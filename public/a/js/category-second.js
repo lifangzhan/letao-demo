@@ -4,19 +4,19 @@ $(function () {
     var totalPage = 0;
 
     function getData() {
-                    $.ajax({
-                        url: '/category/queryTopCategoryPaging',
-                        type: 'get',
-                        data: {
-                            page: page,
-                            pageSize: pageSize
-                        },
-                        success: function(res){
-                            totalPage = Math.ceil(res.total / pageSize);
+        $.ajax({
+            url: '/category/querySecondCategoryPaging',
+            type: 'get',
+            data: {
+                page: page,
+                pageSize: pageSize
+            },
+            success: function(res){
+                totalPage = Math.ceil(res.total / pageSize);
                 console.log(res);
                 console.log(totalPage);
-                var html = template('categoryFirstTpl',res);
-                $('#categoryFirstBox').html(html);
+                var html = template('categorySecondTpl',res);
+                $('#categorySecondBox').html(html);
             }
         });
     };
