@@ -39,7 +39,7 @@ $(function () {
             },
             success: function (res) {
                 if(res.success) {
-                    location.href = 'addAddress.html';
+                    location.href = 'editAddress.html';
                 }
             }
         })
