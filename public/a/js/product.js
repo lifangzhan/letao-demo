@@ -7,6 +7,7 @@ $(function () {
             pageSize: 100
         },
         success: function (res) {
+            console.log(res);
             var html = template('productsTpl',res);
             $('#productBox').html(html);
         }
@@ -27,11 +28,12 @@ $(function () {
         }
     });
 
-
+    var brandLogo = [];
     $('#fileupload').fileupload({
         dataType: 'json',
         done: function (e, data) {
             console.log(data);
+            brandLogo.push(data.result);
         }
     });
 
@@ -61,9 +63,9 @@ $(function () {
                 statu: 1,
                 num: num,
                 brandId: brandId
-
             },
             success: function (res) {
+                console.log(res);
                 if(res.success) {
                     location.reload();
                 }
