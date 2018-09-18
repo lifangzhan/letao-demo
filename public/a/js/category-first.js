@@ -43,4 +43,30 @@ $(function () {
         getData();
     });
 
+
+
+        $('#btn-primary').on('click', function () {
+            var categoryName = $('.form-control').val();
+            if(!categoryName){
+                alert('请输入分类名称');
+                return;
+            }
+            $.ajax({
+                url: '/category/addTopCategory',
+                type: 'post',
+                data: {
+                    categoryName: categoryName
+                },
+                success: function (res) {
+                    if(res.success) {
+                        location.reload();
+                    }
+                }
+            });
+        })
+
+
+
+
+
 })

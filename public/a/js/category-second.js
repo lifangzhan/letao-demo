@@ -43,4 +43,54 @@ $(function () {
         getData();
     });
 
+
+    $.ajax({
+        url: '/category/queryTopCategoryPaging',
+        type: 'get',
+        data: {
+            page: 1,
+            pageSize: 200
+        },
+        success: function (res) {
+            var html = template('optionsTpl',res);
+            $('#optionsBox').html(html);
+        }
+    });
+
+
+    var brandLogo = '';
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            done: function (e, data) {
+                brandLogo = data.result.picAddr;
+                $('#imgBox').attr('src',brandLogo);
+            }
+        });
+
+    $('#save').on('click', function () {
+        var categoryId = $("#optionsBox").val();
+        var brandName = $('#proName').val();
+
+        if(!categoryId.trim() || !brandName.trim() || !brandLogo.trim() ){
+            alert('未选择商品分类或者商品名称没写或者图片上传失败,请核实再添加');
+            return;
+        }
+
+        $.ajax({
+            url: '/category/addSecondCategory',
+            type: 'post',
+            data: {
+                brandName: brandName,
+                categoryId: categoryId,
+                brandLogo: brandLogo,
+                hot: 1
+            },
+            success: function (res) {
+                if(res.success) {
+                    location.reload();
+                }
+            }
+        })
+    })
+
 })
